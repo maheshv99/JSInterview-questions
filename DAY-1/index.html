@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h3{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>JS INTERVIEW QUESTIONS</h1></center>
+    
+    <hr>
+    <h3>1) Difference between “ == “ and “ === “ operators.</h3>
+    <p>JavaScript provides both strict(===, !==) and type-converting(==, !=) equality comparison. The strict operators take type of variable in consideration, while non-strict operators make type correction/conversion based upon values of variables</p>
+    <br>
+    <ul>
+        <li>Two strings are strictly equal when they have the same sequence of characters, same length, and same characters in corresponding positions.</li>
+        <li>Two numbers are strictly equal when they are numerically equal. i.e, Having the same number value. There are two special cases in this, i. NaN is not equal to anything, including NaN. ii. Positive and negative zeros are equal to one another.</li>
+    </ul>
+    <hr>
+
+    <h3>2) What is the spread operator?</h3>
+    <p>The JavaScript spread operator ( ... ) allows us to quickly copy all or part of an existing array or object into another array or object.</p>
+    <hr>
+
+    <h3>3) What are the differences between var, let and const?</h3>
+    <p>  var declarations are globally scoped or function scoped <br>
+        var variables can be updated and re-declared within its scope; <br> 
+         while let and const are block scoped. <br>
+        let variables can be updated but not re-declared; <br>
+        const variables can neither be updated nor re-declared. <br> 
+        But while var variables are initialized with undefined, let and const variables are not initialized. <br>
+         While var and let can be declared without being initialized, const must be initialized during declaration.</p>
+    <hr>
+
+    <h3>4) What is execution context</h3>
+    <p>The Execution Context contains the code that's currently running, and everything that aids in its execution.</p>
+    <ul><li> function can be passed as an argument </li>
+    <li> function can be returned from other function </li>
+    <li>function can be assigned to a varible</li></ul>
+    <hr>
+
+    <h3>5) What is meant by first class functions</h3>
+    <p>First-class functions means when functions in that language are treated like any other variable. <br>
+        A function can be passed as an argument to other functions, can be returned by another function and can be assigned as a value to a variable.</p>
+    <hr>
+
+    <h3>6) What are closures? Give an example of closure</h3>
+    <p>A closure is the combination of a function and the lexical environment within which that function was declared. <br>
+        i.e, It is an inner function that has access to the outer or enclosing function’s variables. <br>
+        The closure has three scope chains. <br>
+         i. Own scope where variables defined between its curly brackets <br>
+         ii. Outer function’s variables <br>
+        iii. Global variables.</p>
+        <p>Example:::</p>
+        <pre>
+            function hello(name) {
+                 function inner(a) {
+                  console.log(a*a*a , name);
+                };
+                inner(10);
+              }
+              var calltofunc = hello("mahesh");
+              calltofunc("mahesh ");
+        </pre>
+    <hr>
+
+    <h3>7) Explain call(), apply() and, bind() methods. Give an example of call(), apply(), bind()</h3>
+    <p>call(): <br>
+         it is use for calling the fun , we need to give comma separated..,in case of call, each and every arguments which is required to be passed to the function will be passes individually.</p>
+         <p>pply() : <br>
+             each and every arguments which is required to be passed to the function will be inside an array. </p>
+             <p>bind(): <br>
+                it will return you new function, and this new function , we can call at anytime and anywhere.</p>
+    
+  
+    <pre>
+        let m1={name:"mahesh",age:21};
+        let m2={name:"mallu",age:26};
+        function callme(a,b){
+            console.log(this.name +" is "+this.age+"old"+"all the best");
+            console.log(a+b);
+        }
+        callme.call(m1,10,20);
+        callme.apply(m2,[100,200]);
+        let hi=callme.bind(m1);
+        hi(50,60);
+    </pre>
+    <hr>
+
+</body>
+</html>
