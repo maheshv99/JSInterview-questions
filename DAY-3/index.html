@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <p>1.What is the use of setTimeout?</p>
+   Ans: 
+   <ul>
+    <li>It is the method that executes the function or statement after given period of time.</li>
+    <li>It will ebe given by browser.</li>
+   </ul>  
+    <pre>
+        setTimeout(()=>{
+            console.log("hell world")
+        },3000)
+    </pre>
+    <hr>
+    <p>2.What is an event loop and call stack?</p>
+    Ans:
+    Event loop:
+    <ul>
+        <li>The event loop to monitor the call stack and callback queue.</li>
+        <li>If the call stack is empty,</li>
+        <li>The event loop will take the first item from the callback queue and will push it to call stack</li>
+    </ul>
+    Call stack:
+    <ul>
+        <li>A call stack is a way for the Java engine to keep track of its place in code that calls multiple functions. </li>
+        <li>It has the information on what function is currently being run and what functions are invoked from within that function…</li>
+        <li>A call stack is a mechanism for an interpreter to keep track of its place in a script that calls multiple functions</li>
+        <li>It is like a real stack in data structures where data can be pushed and popped and follows the Last In First Out (LIFO) principle. We use call stack for memorizing which function is running right now.</li>
+    </ul>
+    <hr>   
+    <p>3.What are arrow functions?</p>
+  
+    <li>To write simple and manageable.</li>
+    <li>It is easy to understand.</li>
+  <pre> let arrow = () =>{
+            console.log("arow")
+        }
+        arrow();</pre>
+        <hr> 
+   <p>4.What is a Temporal Dead Zone?</p>
+   Ans: <ul>
+    <li>If we are acess any variable before its deceleartion and that variable is defined using let and const,</li>
+  <li>Then they will be getting refernce error because the variable is in temporal dead Zone</p>
+</ul>
+<hr>
+<p>5.what is Hoisting?</p>
+Ans: <ul>
+    <li>JavaScript Hoisting refers to the process whereby the interpreter appears to move the declaration of functions, variables or classes to the top of their scope, prior to execution of the code</li>
+    <li>In JavaScript, a variable can be declared after it has been used.</li>
+    <li>Hoisting is JavaScript's default behavior of moving declarations to the top.</li>
+</ul>
+<hr>
+   <p>5.What is Dom?</p>
+ Ans:
+   <ul>
+    <li>The Document Object Model (DOM) is a programming interface for web documents.</li>
+    <li>It represents the page so that programs can change the document structure, style, and content.</li>
+</ul>
+<hr>
+ <p>6.Difference between undefined vs not defined vs NaN?</p>
+ Ans:
+ undefined :
+ <ul>
+    <li>The undefined property indicates that a variable has not been assigned a value, or not declared at all.</li>
+    <pre>Ex:
+        let X;
+        console.log(X)
+    </pre>
+</ul>
+NAN:<ul>
+    <li>In JavaScript, NaN is short for "Not-a-Number".</li>
+    <pre>
+        Ex: EA1
+            ES1  
+    </pre>
+</ul>
+Not defined: <ul>
+    <li>while "not defined" indicates that a variable does not exist.</li>
+    <li>The JavaScript exception "variable is not defined" occurs when there is a non-existent variable referenced somewhere</li>
+</ul>
+</body>
+</html>
