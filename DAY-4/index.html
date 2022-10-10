@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-color: black;
+            color: wheat;
+        }
+       
+    </style>
+</head>
+<body>
+    <p>1.How many operators do we have in JS ?</p>
+    Ans:  
+<br>
+<br>There are different types of JavaScript operators: <ul>
+      
+         <li>Aritmetic Operators</li>
+         <li>Assignment Operators</li> 
+         <li>Comparison Operators</li>   
+         <li> Logical Operators</li>  
+         <li>Conditional Operators</li>  
+        </ul>\
+        <hr>
+    <p>2.whta is pure function?</p>
+Ans: <p>It is function that would give same or consistnt output and same inut been passed.It is nothing but a well defined function</p>
+
+<pre>
+    function add(a,b){
+        console.log(a+b)
+    }
+    add(4,3)
+</pre>
+<hr>
+<p>3.What is call back hell?</p>
+<ul>
+    <li>It is a function that is executed after execution of its parent function is executed completely.</li>
+    <li>It also form pyrmaid like structure</li>
+    <li>It is diffcult to understand we should avoid using callback hell as much as possible</li>
+</ul>
+<pre>
+    function print(){
+        setTimeout(() => {
+            console.log('5')
+            setTimeout(() => {
+            console.log('4')
+            setTimeout(() => {
+                console.log('3')
+                setTimeout(() => {
+                    console.log('2')
+                    setTimeout(() => {
+                        console.log('1')
+                    }, 1000);
+                }, 2000);
+            }, 3000);    
+            }, 4000);
+        }, 5000);
+    }
+    print();
+</pre>
+<hr>
+<p>4.What are promises and why do we need them?</p>
+Ans:
+<br><br>
+A promise is an object that may produce a single value sometime in the future. Either a resolved value or a rejected value.
+<ul>
+    <li>promise is like heaven for the callback.</li>
+    <li>It is introduced in es6 version </li>
+    <li>Promises are used to handle asynchronous operations. </li>
+    <li>They provide an alternative approach for callbacks by reducing the callback hell </li>
+</ul>
+<hr>
+<p>5.What is promise chaining?</p>
+Ans:
+<ul>
+    <li>Promise chaining occurs when the callback function returns a promise.</li>
+    <li>The process of executing a sequence of asynchronous tasks one after another using promises is known as Promise chaining.</li> 
+    <li>Sometimes, you want to execute two or more related asynchronous operations,</li>
+</ul>
+<hr>
+<p>6.What is the purpose of async/await keywords?</p>
+Ans:  
+<li>
+    <li>An async function is a function declared with the async keyword, and the await keyword is permitted within it.</li>
+    <li>The word “async” before a function means one simple thing: a function always returns a promise</li>
+   <li>The keyword "await" makes JavaScript wait until that promise settles and returns its result</li>
+   <li>When the await keyword is applied, it suspends the calling method and yields control back to its caller until the awaited task is complete.</li>
+</ul>
+<hr>
+<p>Example of async/await?</p>
+Ans:
+<pre>
+    async function func() {
+
+        let y = new Promise((resolve , reject) => {
+            let a = 100 
+            if(a > 99) {
+                 resolve("Resolved") 
+            }
+            else {
+                 reject("Rejected") 
+            }
+        })
+    
+        let func1 = (response) => { console.log(response) } 
+        let func2 = (response) => { console.log(response) }
+    
+    
+        await y.then( func1 ).catch( func2 )
+        console.log("Hello there")
+    }
+    func()
+    
+</pre>
+
+
+<script>
+async function func() {
+
+    let y = new Promise((resolve , reject) => {
+        let a = 100 
+        if(a > 99) {
+             resolve("Resolved") 
+        }
+        else {
+             reject("Rejected") 
+        }
+    })
+
+    let func1 = (response) => { console.log(response) } 
+    let func2 = (response) => { console.log(response) }
+
+
+    await y.then( func1 ).catch( func2 )
+    console.log("Hello there")
+}
+func()
+
+</script>
+</body>
+</html>
