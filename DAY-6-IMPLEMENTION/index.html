@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INTER_VIEW-PREP-DAY_6-IMPLE</title>
+    <style>
+        h3{
+            color: red;
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>IMPLEMENTION OF JS INTERVIEW QUESTIONS</h1>
+    <hr>
+    <h3>Create a button , on click of which new Heading tag h1 should be added with text as "MERN stack" on the screen above button</h3>
+    <button onclick="createh1()">click me</button>
+    <div></div>
+   
+    <hr>
+    <h3>Write code to get 1st H1 element from a webpage using DOM</h3>
+    <script>
+        let H1=document.getElementsByTagName("h1")[0].innerHTML;
+        document.write(H1);
+    </script>
+    <hr>
+    <h3>Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep updating every second</h3>
+    <div>HH:MM:SS</div>
+    <div id="clock"></div>
+    <hr>
+    <h3>Create an HTML page having content as Hello world and a button named Replace Text. When user will click on this button page content should be changed to "Welcome to Elevation academy"</h3>
+    <h2 id="changeText">Hello world</h2>
+    <button onclick="change()">Replace Text</button>
+    <hr>
+    <h3>Create an HTML page having content as Hello world and a button named "Hide Text." When user will click on this button hide the "Hello World" text</h3>
+    <h2 id="chhh1">Hello World</h2>
+    <button onclick="hidetext()">Hide Text</button>
+    <hr>
+    <h3>Given an array of 0's and 1's find out number of 0's</h3>
+    <button onclick="find()">find out</button>
+    <p>let arr=[1,0,1,0,0,0,1,1,1,1,0,0,1];</p>
+    <p id="count1"></p>
+    <hr>
+    <h3>Given an array find out total no. of odd and even nos.</h3>
+    <div id="oddEven"></div>
+    <hr>
+    <h3>Given a string find out number of vowels </h3>
+    <div id="vowels"></div>
+    <hr>
+    <h3>Write a code to create two objects with 2 properties each, one will be string and other will be an array. Create a function to check if all the elements of the arrays in both the objects are same</h3>
+   <div id="object"></div>
+   <hr>
+
+<script>
+    function createh1(){
+        let h1=document.createElement("h1");
+        h1.innerText="MERN stack";
+        document.getElementsByTagName("div")[0].appendChild(h1);
+    }
+
+ function currentTime() {
+  let date = new Date(); 
+  let hh = date.getHours()%12;
+  let mm = date.getMinutes();
+  let ss = date.getSeconds();
+
+  let time = hh + "   : " + mm + " : " + ss + " ";
+
+  document.getElementById("clock").innerText = time; 
+  let t = setTimeout(function(){ currentTime() }, 1000);
+}
+currentTime();
+
+function change(){
+    let chh=document.getElementById("changeText");
+    chh.innerText="Welcome to  Elevatoin academy";
+    
+}
+
+function hidetext(){
+    let hide=document.getElementById("chhh1");
+    hide.style.visibility="hidden";
+}
+
+function find(){
+    let arr=[1,0,1,0,0,0,1,1,1,1,0,0,1];
+    let length=arr.length;
+    let count=0;
+    for(let i=0;i<length;i++){
+       if(arr[i]=='0'){
+        count++;
+       }
+    }
+    document.getElementById("count1").innerText="0's numbers in array --> "+count;
+}
+
+let arr2=[10,30,55,77,89,44,67,84,23,21];
+let even=0;
+let odd=0;
+ for(let i=0;i<arr2.length;i++){
+    if(arr2[i]%2=='0'){
+      even++;
+    }else{
+        odd++;
+    }
+ }
+ document.getElementById("oddEven").innerText="even no :"+even+"  odd :"+odd;
+
+ let str="mahesh";
+ let vo=0;
+ for(let i=0;i<str.length;i++){
+    if(str[i]=='a'||str[i]=='A'||str[i]=='e'||str[i]=='E'||str[i]=='i'||str[i]=='I'||str[i]=='o'||str[i]=='O'||str[i]=='u'||str[i]=='U'){
+        vo++;
+    }
+ }
+document.getElementById("vowels").innerText="vowels :"+vo;
+
+let obj1={
+    name:"mahesh",
+    arr1:[1,2,3,4,5]
+}
+let obj2={
+    name:"mallu",
+    arr2:[1,2,3,4,5]
+}
+function check(arr1,arr2){
+    if(arr1.length==arr2.length){
+    for(let i=0;i<arr1.length;i++){
+        if(arr1[i]==arr2[i]){
+            continue;
+        }else{
+            return false;
+        }
+        return true;
+    }
+    }else{
+        return false;
+    }
+}
+let result=check(obj1.arr1,obj2.arr2);
+if(result){
+    let text=document.getElementById("object");
+    text.innerText="Both array are same";
+}else{
+    let text=document.getElementById("object");
+    text.innerText="Both array are not same";
+}
+</script>
+
+</body>
+</html>
